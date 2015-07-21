@@ -62,7 +62,7 @@ struct GNUNET_PeerIdentity;
  */
 struct GNUNET_HashCode
 {
-  uint32_t bits[512 / 8 / sizeof (uint32_t)];   /* = 16 */
+  uint32_t bits[512 / 8 / 4];   /* = 16 */
 };
 
 
