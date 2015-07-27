@@ -195,13 +195,13 @@ GNUNET_CRYPTO_rsa_private_key_encode (const struct GNUNET_CRYPTO_rsa_PrivateKey 
   char *b;
 
   n = gcry_sexp_sprint (key->sexp,
-                        GCRYSEXP_FMT_DEFAULT,
+                        GCRYSEXP_FMT_ADVANCED,
                         NULL,
                         0);
   b = GNUNET_malloc (n);
   GNUNET_assert ((n - 1) ==     /* since the last byte is \0 */
                  gcry_sexp_sprint (key->sexp,
-                                   GCRYSEXP_FMT_DEFAULT,
+                                   GCRYSEXP_FMT_ADVANCED,
                                    b,
                                    n));
   *buffer = b;
