@@ -146,7 +146,7 @@ extern "C"
 #endif
 #endif
 
-
+#ifndef GNUNET_UTIL_TALER_WALLET_LIB_H
 /* ******************* bloomfilter ***************** */
 
 /**
@@ -365,7 +365,6 @@ GNUNET_CONTAINER_bloomfilter_resize (struct GNUNET_CONTAINER_BloomFilter *bf,
                                      void *iterator_cls,
                                      size_t size,
                                      unsigned int k);
-
 
 /* ****************** metadata ******************* */
 
@@ -639,7 +638,7 @@ GNUNET_CONTAINER_meta_data_get_serialized_size (const struct GNUNET_CONTAINER_Me
 struct GNUNET_CONTAINER_MetaData *
 GNUNET_CONTAINER_meta_data_deserialize (const char *input,
                                         size_t size);
-
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 /* ******************************* HashMap **************************** */
 
@@ -965,8 +964,7 @@ unsigned int
 GNUNET_CONTAINER_multihashmap_get_random (const struct GNUNET_CONTAINER_MultiHashMap *map,
                                           GNUNET_CONTAINER_HashMapIterator it,
                                           void *it_cls);
-
-
+                                          
 /* ***************** Version of Multihashmap for peer identities ****************** */
 
 /**
@@ -1232,7 +1230,6 @@ unsigned int
 GNUNET_CONTAINER_multipeermap_get_random (const struct GNUNET_CONTAINER_MultiPeerMap *map,
                                           GNUNET_CONTAINER_PeerMapIterator it,
                                           void *it_cls);
-
 
 /* Version of multihashmap with 32 bit keys */
 

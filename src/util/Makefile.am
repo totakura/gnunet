@@ -133,9 +133,11 @@ libgnunetutil_taler_wallet_la_SOURCES = \
   container_heap.c \
   container_multihashmap.c \
   container_multihashmap32.c \
+  container_multipeermap.c \
   crypto_symmetric.c \
   crypto_crc.c \
   crypto_ecc.c \
+  crypto_ecc_dlog.c \
   crypto_hash.c \
   crypto_hkdf.c \
   crypto_kdf.c \

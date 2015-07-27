@@ -353,7 +353,7 @@ GNUNET_STRINGS_base64_encode (const char *data, size_t len, char **output);
 size_t
 GNUNET_STRINGS_base64_decode (const char *data, size_t len, char **output);
 
-
+#ifndef GNUNET_UTIL_STRING_H
 /**
  * Parse a path that might be an URI.
  *
@@ -436,7 +436,7 @@ enum GNUNET_STRINGS_FilenameCheck
 int
 GNUNET_STRINGS_check_filename (const char *filename,
 			       enum GNUNET_STRINGS_FilenameCheck checks);
-
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 /**
  * Tries to convert @a zt_addr string to an IPv6 address.
@@ -487,7 +487,7 @@ GNUNET_STRINGS_to_address_ip (const char *addr,
 			      uint16_t addrlen,
 			      struct sockaddr_storage *r_buf);
 
-
+#ifndef GNUNET_UTIL_TALER_WALLET_LIB_H
 /**
  * Returns utf-8 encoded arguments.  Does nothing (returns a copy of
  * @a argc and @a argv) on any platform other than W32.  Returned @a
@@ -505,6 +505,7 @@ GNUNET_STRINGS_get_utf8_args (int argc,
 			      char *const *argv,
 			      int *u8argc,
                               char *const **u8argv);
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 
 /* ***************** IPv4/IPv6 parsing ****************** */

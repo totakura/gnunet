@@ -328,7 +328,7 @@ struct GNUNET_CRYPTO_AuthKey
   unsigned char key[GNUNET_CRYPTO_HASH_LENGTH];
 };
 
-
+#ifndef GNUNET_UTIL_TALER_WALLET_LIB_H
 /**
  * Size of paillier plain texts and public keys.
  * Private keys and ciphertexts are twice this size.
@@ -380,7 +380,7 @@ struct GNUNET_CRYPTO_PaillierCiphertext
    */
   unsigned char bits[GNUNET_CRYPTO_PAILLIER_BITS * 2 / 8];
 };
-
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 /* **************** Functions and Macros ************* */
 
@@ -1155,7 +1155,7 @@ GNUNET_CRYPTO_eddsa_key_create_from_file (const char *filename);
  */
 struct GNUNET_CONFIGURATION_Handle;
 
-
+#ifndef GNUNET_UTIL_TALER_WALLET_LIB_H
 /**
  * @ingroup crypto
  * Create a new private key by reading our peer's key from
@@ -1167,7 +1167,7 @@ struct GNUNET_CONFIGURATION_Handle;
  */
 struct GNUNET_CRYPTO_EddsaPrivateKey *
 GNUNET_CRYPTO_eddsa_key_create_from_configuration (const struct GNUNET_CONFIGURATION_Handle *cfg);
-
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 /**
  * @ingroup crypto
@@ -1238,7 +1238,7 @@ GNUNET_CRYPTO_ecdhe_key_clear (struct GNUNET_CRYPTO_EcdhePrivateKey *pk);
 const struct GNUNET_CRYPTO_EcdsaPrivateKey *
 GNUNET_CRYPTO_ecdsa_key_get_anonymous (void);
 
-
+#ifndef GNUNET_UTIL_TALER_WALLET_LIB_H
 /**
  * @ingroup crypto
  * Setup a hostkey file for a peer given the name of the
@@ -1264,7 +1264,7 @@ GNUNET_CRYPTO_eddsa_setup_hostkey (const char *cfg_name);
 int
 GNUNET_CRYPTO_get_peer_identity (const struct GNUNET_CONFIGURATION_Handle *cfg,
                                  struct GNUNET_PeerIdentity *dst);
-
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 /**
  * Compare two Peer Identities.
@@ -1575,7 +1575,7 @@ GNUNET_CRYPTO_mpi_scan_unsigned (gcry_mpi_t *result,
                                  const void *data,
                                  size_t size);
 
-
+#ifndef GNUNET_UTIL_TALER_WALLET_LIB_H
 /**
  * Create a freshly generated paillier public key.
  *
@@ -1648,7 +1648,7 @@ GNUNET_CRYPTO_paillier_hom_add (const struct GNUNET_CRYPTO_PaillierPublicKey *pu
  */
 int
 GNUNET_CRYPTO_paillier_hom_get_remaining (const struct GNUNET_CRYPTO_PaillierCiphertext *c);
-
+#endif /* ifndef GNUNET_UTIL_TALER_WALLET_LIB_H */
 
 /* ********* Chaum-style RSA-based blind signatures ******************* */
 
